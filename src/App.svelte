@@ -1,30 +1,27 @@
 <script>
-	export let name;
+  import StepsProvider from "components/Steps/StepsProvider.svelte"
+
 </script>
 
 <main>
-	<h1>Hello {name}!</h1>
-	<p>Visit the <a href="https://svelte.dev/tutorial">Svelte tutorial</a> to learn how to build Svelte apps.</p>
+  <!-- <TodoList /> -->
+  <StepsProvider>
+    <h2 slot="header">
+        Test header slot
+    </h2>
+    <h3 slot="footer">
+      Test footer slot
+  </h3>
+    </StepsProvider>
 </main>
 
 <style>
-	main {
-		text-align: center;
-		padding: 1em;
-		max-width: 240px;
-		margin: 0 auto;
-	}
+  main {
+    margin: 0;
+    padding: 4px 8px;
+  }
 
-	h1 {
-		color: #ff3e00;
-		text-transform: uppercase;
-		font-size: 4em;
-		font-weight: 100;
-	}
-
-	@media (min-width: 640px) {
-		main {
-			max-width: none;
-		}
-	}
+  *{
+    color: #232323;
+  }
 </style>
