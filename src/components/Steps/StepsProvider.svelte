@@ -1,6 +1,9 @@
 <script>
 	import { fade, fly } from 'svelte/transition';
-	import TodoList from 'components/Todos/TodoList.svelte'
+	import TodoList from '@/components/Todos/TodoList.svelte'
+	import { generateFakeUserDatas } from '@/util/generateFakeUserDatas.js'
+	import Step from '@/components/Steps/Step.svelte'
+
 	let stepChanger = 0
 	let steps = [1,2,3,4,5]
 	let action = false
@@ -27,6 +30,7 @@
 		}
 	}
 	
+	
 </script>
 
 <div>
@@ -40,8 +44,9 @@
 
 {#each steps as step}
 	{#if stepChanger == step-1}
-		<div>
-			<TodoList/>
+		<div transition:fade class="step-wrapper">
+			<!-- <TodoList data={generateFakeUserDatas(20)}/> -->
+			<Step number={step} />
 		</div>
 	{/if}
 {/each}
@@ -51,5 +56,8 @@
 </div>
 
 <style>
+	.step-wrapper{
+		position: relative;
 
+	}
 </style>

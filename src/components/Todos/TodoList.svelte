@@ -2,9 +2,16 @@
   import storeTodos from "stores/todos.js";
   import { fade } from 'svelte/transition';
 
+  export let data;
+
   const editData = (data) => {
     console.log(`> data : `, data);
   };
+
+  $: console.log(`> data : `,data)
+  
+
+
 </script>
 
 {#if $storeTodos.length == 0}
@@ -16,7 +23,7 @@
       <th>Timestamp</th>
       <th>Edit</th>
     </tr>
-    {#each $storeTodos as todo}
+    {#each data as todo}
       <tr>
         <td>{todo.name}</td>
         <td>{todo.timestamp}</td>

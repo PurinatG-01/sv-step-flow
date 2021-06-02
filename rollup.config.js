@@ -15,6 +15,7 @@ const aliases = alias({
 	  { find: "stores", replacement: "src/stores" },
     { find: "metadata", replacement: "src/metadata" },
     { find: "util", replacement: "src/util" },
+    { find: "@", replacement: "src" },
   ],
 });
 

@@ -1,5 +1,6 @@
 <script>
     // your script goes here
+    export let number;
 </script>
 
 <style>
@@ -7,7 +8,7 @@
 </style>
 
 <h1>
-    Step
+    Step # {number ?? '-'}
 </h1>
 
 <!-- markup (zero or more items) goes here -->
